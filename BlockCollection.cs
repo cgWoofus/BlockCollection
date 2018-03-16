@@ -45,6 +45,12 @@ public class BlockCollection : ScriptableObject
     public GameObject[] _blockTypes;
     public bool _adaptive = false;
     public BGTYPE _bgType;
+    [SerializeField]
+    private bool _isHarm;
+
+    [SerializeField]
+    private bool _isAnimated;
+
     //public OblockBehaviour _oBehavior;
     
     
@@ -80,7 +86,6 @@ public class BlockCollection : ScriptableObject
 
     }
 
-
     public void SetInitBlock(GameObject block)
     {
         _initBlock = block;
@@ -101,6 +106,7 @@ public class BlockCollection : ScriptableObject
     {
         throw new NotImplementedException();
     }
+
     public void SetBlockTypes(params GameObject[] blocks)
     {
 
@@ -110,8 +116,6 @@ public class BlockCollection : ScriptableObject
             _blockTypes[x] = blocks[x];
         }
     }
-
-
 
     public float GetRayDistanceCast
     {
